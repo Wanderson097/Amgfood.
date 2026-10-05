@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agmfood – Hamburgueria artesanal em Anápolis</title>
+<meta name="description" content="Hamburgueria artesanal em Anápolis. Escolha o blend e o pão, e peça pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Manrope:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0B0B0B;--card:#151515;--ink:#F5F5F3;--mut:#9A9A96;--or:#FF6A00;--line:#2A2A2A;--sel:rgba(255,106,0,.13)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Manrope,system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3{font-family:Unbounded,system-ui,sans-serif;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font:800 1.25rem Unbounded,sans-serif;letter-spacing:-.02em}
+.logo i{font-style:normal;color:var(--or)}
+.nav{color:var(--ink);font-weight:700;text-decoration:none;font-size:.95rem;border:1px solid var(--or);padding:9px 16px;border-radius:999px}
+.nav:hover{background:var(--or);color:#0B0B0B}
+.hero{display:grid;gap:44px;padding:36px 0 84px}
+@media(min-width:900px){.hero{grid-template-columns:1fr 440px;gap:64px;align-items:start;padding-top:64px}}
+h1{font-size:clamp(2.3rem,7.4vw,4.3rem);font-weight:800;line-height:1.04;letter-spacing:-.04em}
+.sub{color:var(--mut);font-size:1.12rem;max-width:27em;margin:24px 0 0}
+.fatos{display:flex;gap:32px;margin-top:38px;flex-wrap:wrap}
+.fatos div{font-size:.92rem;color:var(--mut)}
+.fatos b{display:block;color:var(--or);font:800 1.5rem Unbounded,sans-serif;letter-spacing:-.03em}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--or);border-radius:18px;overflow:hidden}
+.passo{padding:22px 22px 6px}
+.passo h3{font-size:.95rem;font-weight:800;margin-bottom:12px}
+.passo h3 span{color:var(--or);margin-right:8px}
+.lista{display:grid;gap:2px}
+.row{display:grid;grid-template-columns:20px 1fr;gap:12px;align-items:start;text-align:left;width:100%;background:none;border:0;border-radius:10px;padding:10px;cursor:pointer;color:var(--ink);font:inherit}
+.row:hover{background:#1D1D1D}
+.row i{width:20px;height:20px;border:2px solid #444;border-radius:50%;margin-top:3px;display:block}
+.row[aria-pressed=true]{background:var(--sel)}
+.row[aria-pressed=true] i{border-color:var(--or);background:radial-gradient(circle,var(--or) 0 5px,transparent 6px)}
+.row b{display:block;font-weight:700;line-height:1.3}
+.row small{color:var(--mut);font-size:.88rem}
+.paes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pao{border:1.5px solid var(--line);background:none;border-radius:10px;padding:12px;text-align:left;font:700 .92rem Manrope,sans-serif;color:var(--ink);cursor:pointer}
+.pao:hover{border-color:#555}
+.pao[aria-pressed=true]{border-color:var(--or);background:var(--sel)}
+.ticket{margin-top:18px;border-top:2px dashed var(--line);padding:18px 22px 22px;font-family:"Space Mono",monospace;font-size:.86rem;background:#101010}
+.ticket p{margin:0 0 5px;display:flex;justify-content:space-between;gap:12px}
+.ticket span{color:var(--mut)}
+.ticket strong{font-weight:700;text-align:right;color:var(--or)}
+.flash{animation:fl .5s}
+@keyframes fl{from{background:#2A1606}to{background:#101010}}
+.btn{display:block;margin-top:16px;background:var(--or);color:#0B0B0B;text-align:center;text-decoration:none;font:700 1.02rem Manrope,sans-serif;padding:15px;border-radius:12px}
+.btn:hover{filter:brightness(1.08)}
+:focus-visible{outline:3px solid #fff;outline-offset:2px}
+section{padding:60px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.5rem,4.4vw,2.2rem);font-weight:800;letter-spacing:-.03em;margin-bottom:26px}
+.tres{display:grid;gap:30px}
+@media(min-width:760px){.tres{grid-template-columns:repeat(3,1fr)}}
+.tres h3{font-size:1.05rem;margin-bottom:6px;color:var(--or)}
+.tres p,.info p{color:var(--mut);margin:0}
+.info{display:grid;gap:40px}
+@media(min-width:760px){.info{grid-template-columns:1fr 1fr}}
+.info strong{color:var(--ink)}
+.mapa{display:inline-block;margin-top:18px;color:var(--ink);font-weight:700;text-decoration:none;border-bottom:2px solid var(--or);padding-bottom:2px}
+footer{padding:28px 0 60px;color:var(--mut);font-size:.88rem;border-top:1px solid var(--line)}
+#aviso{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#0B0B0B;padding:12px 18px;border-radius:12px;font-weight:700;font-size:.92rem;max-width:92%;text-align:center;display:none;z-index:9}
+@media (prefers-reduced-motion:reduce){.flash{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">agm<i>food</i></div><a class="nav" href="#pedir">Fazer pedido</a></header>
+
+<div class="hero" id="pedir">
+<div>
+<h1>Seu burger, do seu jeito.</h1>
+<p class="sub">Hamburgueria artesanal em Anápolis. Cinco blends de carne, pães da casa e pedido direto pelo WhatsApp.</p>
+<div class="fatos">
+<div><b>4,8</b>nota no Google</div>
+<div><b>18h–00h</b>todos os dias</div>
+</div>
+</div>
+
+<div class="card">
+<div class="passo"><h3><span>1</span>Escolha o blend</h3><div class="lista" id="blends" role="group" aria-label="Blend de carne"></div></div>
+<div class="passo"><h3><span>2</span>Escolha o pão</h3><div class="paes" id="paes" role="group" aria-label="Tipo de pão"></div></div>
+<div class="ticket" id="ticket">
+<p><span>Blend</span><strong id="tb"></strong></p>
+<p><span>Pão</span><strong id="tp"></strong></p>
+<a class="btn" id="zap" href="#" target="_blank" rel="noopener">Pedir no WhatsApp</a>
+</div>
+</div>
+</div>
+
+<section>
+<h2>Como pedir</h2>
+<div class="tres">
+<div><h3>No salão</h3><p>Mesa com atendimento, todas as noites.</p></div>
+<div><h3>Retirada</h3><p>Faça o pedido e retire no balcão.</p></div>
+<div><h3>Delivery</h3><p>Receba em casa, em Anápolis.</p></div>
+</div>
+</section>
+
+<section>
+<div class="info">
+<div>
+<h2>Onde fica</h2>
+<p><strong>R. Amazonas, 62</strong>, esquina com a Rua Bela Vista</p>
+<p>Setor Central, Anápolis – GO, 75024-080</p>
+<p style="margin-top:10px">Estacionamento na rua e entrada acessível.</p>
+<a class="mapa" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Agmfood+R.+Amazonas+62+An%C3%A1polis+GO">Abrir no mapa</a>
+</div>
+<div>
+<h2>Horário</h2>
+<p><strong>Todos os dias</strong>, das 18h às 00h</p>
+</div>
+</div>
+</section>
+</div>
+<footer><div class="wrap">Agmfood · Anápolis, GO · Prévia do site</div></footer>
+<div id="aviso" role="status"></div>
+
+<script>
+/* Troque pelo número real: só dígitos, 55 + DDD + número. Ex: 5562999999999 */
+var WHATS="5562993308785";
+var BLENDS=[
+["Tradicional","O blend clássico da casa"],
+["Cupim com bacon","Cupim bovino com bacon"],
+["Costela com fraldinha","Costela e fraldinha no mesmo blend"],
+["Suíno com bacon","Carne suína com bacon"],
+["Calabresa","Blend com calabresa"]];
+var PAES=["Tradicional","Gergelim australiano","Integral","Estilo francês"];
+var b=0,p=0,tmr;
+function el(t,c){var e=document.createElement(t);if(c)e.className=c;return e}
+function montar(){
+ var lb=document.getElementById("blends");lb.innerHTML="";
+ BLENDS.forEach(function(x,i){
+  var r=el("button","row");r.type="button";r.setAttribute("aria-pressed",i===b);
+  r.innerHTML="<i></i><span><b></b><small></small></span>";
+  r.querySelector("b").textContent=x[0];r.querySelector("small").textContent=x[1];
+  r.onclick=function(){b=i;montar()};lb.appendChild(r)});
+ var lp=document.getElementById("paes");lp.innerHTML="";
+ PAES.forEach(function(x,i){
+  var r=el("button","pao");r.type="button";r.textContent=x;r.setAttribute("aria-pressed",i===p);
+  r.onclick=function(){p=i;montar()};lp.appendChild(r)});
+ document.getElementById("tb").textContent=BLENDS[b][0];
+ document.getElementById("tp").textContent=PAES[p];
+ var t=document.getElementById("ticket");t.classList.remove("flash");void t.offsetWidth;t.classList.add("flash");
+ var msg="Olá! Quero um burger com blend "+BLENDS[b][0]+" no pão "+PAES[p]+".";
+ document.getElementById("zap").href="https://wa.me/"+WHATS+"?text="+encodeURIComponent(msg)}
+document.getElementById("zap").addEventListener("click",function(e){
+ if(WHATS==="55DDDNUMERO"){
+  e.preventDefault();var a=document.getElementById("aviso");
+  a.textContent="Na versão final, este botão abre o WhatsApp da Agmfood com o pedido pronto.";
+  a.style.display="block";clearTimeout(tmr);tmr=setTimeout(function(){a.style.display="none"},3500)}});
+montar();
+</script>
+</body>
+</html>
